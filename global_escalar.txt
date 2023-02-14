@@ -1,0 +1,6 @@
+__global__ void escalar(float *vec1, float *vec2, float *vec3, unsigned long n){
+    unsigned int pos = blockIdx.x*blockDim.x+threadIdx.x;
+    if(pos < n){
+        vec3[pos] = vec1[pos]*vec2[pos];
+    }
+}
